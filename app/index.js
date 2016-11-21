@@ -1,11 +1,8 @@
-var $ = require("jquery");
+// var $ = require("jquery");
+var Foo = require("./js/Foo");
+import Hello from './components/hello.vue'
 
-require('./css/index.css');
-
-function Foo() {
-  console.log(123)
-}
-
-// ...
-
-module.exports = Foo;
+module.exports = {
+  fun1:Foo,
+  Hello:Hello
+};

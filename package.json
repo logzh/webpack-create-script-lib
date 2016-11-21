@@ -7,8 +7,6 @@
     "lint": "eslint 'app/**/*'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
-    "dev": "gulp",
-    "product": "gulp product",
     "validate": "npm ls"
   },
   "keywords": [
@@ -39,6 +37,8 @@
     "redux-logger": "^2.7.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
+    "vue-html-loader": "^1.2.3",
+    "vue-loader": "^9.9.5",
     "webpack": "^1.13.2",
     "webpack-merge": "^0.14.1"
   }

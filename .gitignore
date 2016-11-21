@@ -2,3 +2,4 @@
 /node_modules
 /example/public/*.js
 stats.json
+.idea/

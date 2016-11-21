@@ -12,7 +12,7 @@ var config = {
     // export itself to a global var
     libraryTarget: "var",
     // name of the global var: "Foo"
-    library: "Foo",
+    library: "TIG",
     path: path.resolve(__dirname, '/h')
   },
   resolve: {
@@ -20,7 +20,7 @@ var config = {
     root: path.resolve(__dirname, 'app/')
   },
   externals: {
-    'jquery': 'jQuery'
+    'jquery': 'jQuery',
   },
   module: {
     loaders: [
@@ -35,6 +35,10 @@ var config = {
       }, {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap')
+      }, {
+        test: /\.vue$/,
+        exclude: /node_modules/,
+        loader: 'vue'
       }
     ]
   },
