@@ -1,5 +1,5 @@
 .idea/*
 /node_modules
-/example/public/*.js
+/example/public/*.map
 stats.json
 .idea/

@@ -8,53 +8,26 @@
 <body>
 <div id="app">
     <div class="block">
-        <h2>双向绑定</h2>
-        <input type="text" v-model="message">
-        {{message}}
-    </div>
-    <div class="block">
-        <h2>v-for</h2>
-        <ul>
-            <li v-for="(todo, index) in todos" :key="index">
-                {{index}}:{{ todo.text }}
-            </li>
-        </ul>
-    </div>
-    <div class="block">
-        <h2>v-html</h2>
-        <div v-html="desc"></div>
-    </div>
-    <div class="block">
-        <h2>computed 计算属性</h2>
-        <div>
-            <p>Original message: "{{ message }}"</p>
-            <p>Computed reversed message: "{{ reversedMessage }}"</p>
-        </div>
-    </div>
-    <div class="block">
-        <my-component></my-component>
+        <my-component :todos="todos"></my-component>
     </div>
 </div>
 <script type="text/javascript" src="/vue.js" charset="utf-8"></script>
 <script type="text/javascript" src="/jquery-1.12.4.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="/index.js" charset="utf-8"></script>
 <script>
-    Vue.component('my-component', TIG.Hello)
-
+    //    Vue.component('my-component', TIG.Hello)
     var app = new Vue({
         el: '#app',
+        components: {
+            // <my-component> will only be available in parent's template
+            'my-component': TIG.Hello
+        },
         data: {
-            message: 'Hello Vue.js!',
             todos: [
                 {text: 'Learn JavaScript'},
                 {text: 'Learn Vue'},
                 {text: 'Build something awesome'}
-            ],
-            desc: `<div>我是html</div>`
-        }, computed: {
-            reversedMessage: function() {
-                return this.message.split('').reverse().join('') // 计算属性只有在它的相关依赖发生改变时才会重新取值
-            }
+            ]
         }
     });
 </script>
