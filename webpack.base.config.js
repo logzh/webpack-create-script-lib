@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var config = {
   entry: {
-    'index':'index.js'
+    'tig':'index.js'
   },
   output: {
     filename: '[name].js',
@@ -21,6 +21,7 @@ var config = {
   },
   externals: {
     'jquery': 'jQuery',
+    'react': 'React'
   },
   module: {
     loaders: [
