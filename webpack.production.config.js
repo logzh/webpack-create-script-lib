@@ -6,14 +6,20 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var config = merge(base, {
   output: {
-    path: path.resolve(__dirname, './bulid')//,
+    path: path.resolve(__dirname, './dist'),
+    filename: '[name].[chunkhash].js',
     //publicPath: 'http://cdn.xxxx.com/xxdemo/' // 静态资源地址
   },
   plugins: [
-    new ExtractTextPlugin('css/[name].css'),
+    new ExtractTextPlugin('css/[name].[chunkhash].css'),
     new webpack.DefinePlugin({
       PRODUCTION: JSON.stringify(true),
       'process.env.NODE_ENV': '"production"'
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
     })
   ]
 });

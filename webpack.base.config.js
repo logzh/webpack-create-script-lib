@@ -4,15 +4,14 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var config = {
   entry: {
-    'tig':'index.js'
+    'tig': 'index.js'
   },
   output: {
     filename: '[name].js',
     publicPath: '/',
-    // export itself to a global var
-    libraryTarget: "var",
-    // name of the global var: "Foo"
+    libraryTarget: "umd",
     library: "TIG",
+    umdNamedDefine: true,
     path: path.resolve(__dirname, '/h')
   },
   resolve: {
@@ -21,7 +20,8 @@ var config = {
   },
   externals: {
     'jquery': 'jQuery',
-    'react': 'React'
+    'react': 'React',
+    'react-dom': 'ReactDOM'
   },
   module: {
     loaders: [
@@ -43,9 +43,7 @@ var config = {
       }
     ]
   },
-  plugins: [
-
-  ]
+  plugins: []
 };
 
 module.exports = config;
