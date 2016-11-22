@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint 'app/**/*'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch",
+    "watch": "webpack --watch",
     "validate": "npm ls"
   },
   "keywords": [

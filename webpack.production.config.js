@@ -7,11 +7,11 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var config = merge(base, {
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: '[name].[chunkhash].js',
+    filename: '[name].js',
     //publicPath: 'http://cdn.xxxx.com/xxdemo/' // 静态资源地址
   },
   plugins: [
-    new ExtractTextPlugin('css/[name].[chunkhash].css'),
+    new ExtractTextPlugin('css/[name].css'),
     new webpack.DefinePlugin({
       PRODUCTION: JSON.stringify(true),
       'process.env.NODE_ENV': '"production"'
