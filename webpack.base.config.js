@@ -11,8 +11,7 @@ var config = {
     publicPath: '/',
     libraryTarget: "umd",
     library: "TIG",
-    umdNamedDefine: true,
-    path: path.resolve(__dirname, '/h')
+    umdNamedDefine: true
   },
   resolve: {
     extensions: ['', '.js'],
