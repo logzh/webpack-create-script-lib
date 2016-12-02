@@ -16,11 +16,7 @@ var config = merge(base, {
       PRODUCTION: JSON.stringify(true),
       'process.env.NODE_ENV': '"production"'
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    })
+    new webpack.optimize.UglifyJsPlugin()
   ]
 });
 

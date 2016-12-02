@@ -1,5 +1,5 @@
 import React from 'react';
-  require('./index.css');
+require('./index.css');
 
 class Greeting extends React.Component {
   render() {

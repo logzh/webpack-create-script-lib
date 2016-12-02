@@ -11,17 +11,17 @@ var config = {
     publicPath: '/',
     libraryTarget: "umd",
     library: "TIG",
-    umdNamedDefine: true,
-    path: path.resolve(__dirname, '/h')
+    umdNamedDefine: true
   },
   resolve: {
     extensions: ['', '.js'],
-    root: path.resolve(__dirname, 'app/')
+    root: path.resolve(__dirname, 'src/')
   },
   externals: {
     'jquery': 'jQuery',
     'react': 'React',
-    'react-dom': 'ReactDOM'
+    'react-dom': 'ReactDOM',
+    'vue': 'Vue'
   },
   module: {
     loaders: [
@@ -42,6 +42,11 @@ var config = {
         loader: 'vue'
       }
     ]
+  },
+  vue: {
+    loaders: {
+      js: 'babel'
+    }
   },
   plugins: []
 };

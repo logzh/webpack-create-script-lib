@@ -7,6 +7,7 @@
     "lint": "eslint 'app/**/*'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
+    "build": "webpack --config webpack.production.config.js",
     "validate": "npm ls"
   },
   "keywords": [
